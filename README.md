@@ -86,109 +86,115 @@ It supports instant messaging, multiple UI themes, image sharing, authentication
 
 ---
 
-## 📂 **Project Structure**
+## 🚀 **Getting Started**
 
-```
-Chat-app/
-│── client/               # React frontend
-│   ├── src/
-│   ├── public/
-│   └── ...
-│
-│── backend/src/          # Node.js backend
-│            ├── controllers/
-│            ├── models/
-│            ├── routes/
-│            ├── lib/
-│            └── ...
-│
-└── README.md
-```
+Follow these instructions to set up the project locally.
 
----
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- MongoDB (Local instance or Atlas URI)
+- Cloudinary Account (for image storage)
 
-## ⚙️ **Installation & Setup**
-
-### **1️⃣ Clone Repository**
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/CodecAnuj/Chat-app.git
+git clone [https://github.com/CodecAnuj/Chat-app.git](https://github.com/CodecAnuj/Chat-app.git)
 cd Chat-app
-```
+````
 
----
+### 2. Backend Setup
 
-## 🖥️ **Backend Setup**
+Navigate to the backend directory and install dependencies:
 
 ```bash
 cd backend
 npm install
 ```
 
-### **Create `.env` inside `/backend`:**
+Create a `.env` file in the `backend` directory with the following variables:
 
-```
-PORT=50001
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_CLOUD_NAME=xxxx
-CLOUDINARY_API_KEY=xxxx
-CLOUDINARY_API_SECRET=xxxx
+```env
+PORT=5001
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_jwt_key
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+NODE_ENV=development
 ```
 
-### **Start Backend**
+Start the backend server:
 
 ```bash
 npm run dev
 ```
 
----
+*The server should run on `http://localhost:5001`.*
 
-## 🌐 **Frontend Setup**
+### 3. Frontend Setup
+
+Open a new terminal, navigate to the frontend directory, and install dependencies:
 
 ```bash
 cd frontend
 npm install
 ```
 
-### **Create `.env` inside `/frontend`:**
-
-```
-VITE_API_URL=http://localhost:50001
-```
-
-### **Start Frontend**
+Start the frontend development server:
 
 ```bash
 npm run dev
 ```
 
----
+*The frontend will launch (usually on `http://localhost:5173`) and automatically connect to the backend at `http://localhost:5001`.*
 
-## ⚡ **Socket.io**
+-----
 
-Socket.io runs inside the backend.
-Starting the backend automatically starts the realtime server.
+## 📂 **Project Structure**
 
----
+```text
+Chat-app/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/   # Auth and Message logic
+│   │   ├── lib/           # DB, Socket, Cloudinary configs
+│   │   ├── middleware/    # Auth protection middleware
+│   │   ├── models/        # Mongoose User and Message schemas
+│   │   ├── routes/        # API routes
+│   │   └── index.js       # Server entry point
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/    # Reusable UI components (Navbar, Sidebar, etc.)
+│   │   ├── lib/           # Axios setup and utilities
+│   │   ├── pages/         # Full pages (Home, Login, Profile, etc.)
+│   │   ├── store/         # Zustand state stores
+│   │   └── App.jsx        # Main application component
+│   └── package.json
+└── README.md
+```
 
-## 🧪 **Available Scripts**
+-----
 
-### **Frontend**
+## 🤝 **Contributing**
 
-* `npm run dev` – Start development server
-* `npm run build` – Build frontend
+Contributions are welcome\! Please fork the repository and submit a pull request for any improvements.
 
-### **Backend**
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-* `npm start` – Run server
-* `npm run dev` – Run with nodemon
+-----
 
----
-
-## 👨‍💻 **Author**
+## 👨‍💻 Author
 
 **Anuj Tiwari**
-GitHub: [CodecAnuj](https://github.com/CodecAnuj)
 
----
+  - GitHub: [@CodecAnuj](https://github.com/CodecAnuj)
+
+-----
+
+Made with ❤️ by **Anuj Tiwari**
